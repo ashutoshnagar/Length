@@ -7,23 +7,14 @@ public class Foot extends Length {
 
     @Override
     public double getValue() {
-        return convertFromMM(value);
+        return convertFromBaseUnit(value);
     }
 
     public Foot(double value)
     {
         this.conversionFactor=FoottoMM;
-        this.value=convertInMM(value);
-    }
-/*
-    @Override
-    public double convertInMM(double value) {
-        return value*FoottoMM;
+        this.value= convertToBaseUnit(value);
     }
 
-    @Override
-    public double convertFromMM(double value) {
-        return value/FoottoMM;
-    }
-*/
+
 }

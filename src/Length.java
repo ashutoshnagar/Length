@@ -3,27 +3,31 @@ public abstract class Length  {
     double conversionFactor;
     public abstract double getValue() ;
 
-
     @Override
-    public boolean equals(Object o)
-    {
-        Length length=(Length)o;
-        length.value= Math.round(length.value  * 100.0 ) / 100.0;
-       // System.out.println(length.value);
-        return value== length.value;
+    public boolean equals(Object o) {
 
+        Length length = (Length) o;
+        double change=value-length.value;
 
+        if(  change<=0.0001&&change>=-0.0001)
+            return true;
+        return false;
     }
 
-    public double convertInMM() {
+
+
+    public double convertToBaseUnit() {
         return value;
     }
 
-    public double convertInMM(double value) {
+    public double convertToBaseUnit(double value) {
+        //System.out.println(value*conversionFactor);
+      //  System.out.println(value);
         return value*conversionFactor;
     }
 
-    public  double convertFromMM(double value) {
+    public  double convertFromBaseUnit(double value) {
+      //  System.out.println(value/conversionFactor);
         return value/conversionFactor;
     }
 }

@@ -4,7 +4,7 @@ public class Inch extends Length {
     @Override
     public double getValue() {
 
-        return convertFromMM(value);
+        return convertFromBaseUnit(value);
     }
 
     public Inch() {
@@ -14,7 +14,8 @@ public class Inch extends Length {
     public Inch(double value)
     {
         this.conversionFactor=InchToMM;
-        this.value=convertInMM(value);
+        this.value= convertToBaseUnit(value);
     }
+
 
 }

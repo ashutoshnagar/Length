@@ -3,30 +3,17 @@ import static org.junit.Assert.*;
 
 public class ConverterTest {
 
+
     @Test
     public void testConvertToInch() throws Exception {
 
-        Length foot=new Foot(1);
-        Length meter=new Meter(2.54);
-        Length cm=new CentiMeter(2.54);
-        Length yard=new Yard(1);
-
-/*
-        assertEquals(new Inch(1), ConverterToUnit.convertToInch(cm));
-        assertEquals(new Inch(36), ConverterToUnit.convertToInch(yard));
-        assertEquals(new Inch(100), ConverterToUnit.convertToInch(meter));
-*/
-
-
-        Length inch=Converter.convertToInch(foot);
-        System.out.println(inch.getValue());
-
-        assertEquals(new Inch(12), inch);
-
-
-
+        assertEquals(new Inch(1), Converter.convertToInch(new CentiMeter(2.54)));
+        assertEquals(new Inch(36), Converter.convertToInch(new Yard(1)));
+        assertEquals(new Inch(100), Converter.convertToInch(new Meter(2.54)));
+        assertEquals(new Inch(12), Converter.convertToInch(new Foot(1)));
 
     }
+
 
     @Test
     public void testConvertToMeter() throws Exception {
@@ -49,4 +36,29 @@ public class ConverterTest {
     }
 
 
+
+    @Test
+    public void testConvertToCup() throws Exception {
+            assertEquals(new Cup(1),Converter.convertToCup(new TeaSpoon(48)));
+    }
+
+    @Test
+    public void testConvertToOunce() throws Exception {
+            assertEquals(new Ounce(2),Converter.convertToOunce(new TeaSpoon(12)));
+    }
+
+    @Test
+    public void testConvertToTableSpoon() throws Exception {
+        /*System.out.println(new Cup(1).convertToBaseUnit());
+        System.out.println(new TableSpoon().convertToBaseUnit());
+        */assertEquals(new TableSpoon(16),Converter.convertToTableSpoon(new Cup(1)));
+
+    }
+
+    @Test
+    public void testConvertToTeaSpoon() throws Exception {
+
+        assertEquals(new TeaSpoon(12),Converter.convertToTeaSpoon(new Ounce(2)));
+
+    }
 }

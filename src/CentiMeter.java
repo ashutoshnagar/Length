@@ -8,24 +8,12 @@ public class CentiMeter extends  Length  {
     @Override
     public double getValue(){
 
-        return convertFromMM(value);
+        return convertFromBaseUnit(value);
     }
      public CentiMeter(double value)
      {
          this.conversionFactor=CMtoMM;
-         this.value=convertInMM(value);
+         this.value= convertToBaseUnit(value);
      }
-/*
 
-    @Override
-    public double convertInMM(double value) {
-        return value*CMtoMM;
-    }
-
-    @Override
-    public double convertFromMM(double value) {
-
-        return value/CMtoMM;
-    }
-*/
 }
