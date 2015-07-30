@@ -15,5 +15,10 @@ public class Yard extends  Length {
         this.conversionFactor=YardtoMM;
         this.value= convertToBaseUnit(value);
     }
+
+    public Yard add(Length object)
+    {
+        return new Yard(addLength(object));
+    }
 }
 

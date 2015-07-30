@@ -1,5 +1,6 @@
 import org.junit.Test;
-import static org.junit.Assert.*;
+
+import static org.junit.Assert.assertEquals;
 
 public class ConverterTest {
 
@@ -17,48 +18,53 @@ public class ConverterTest {
 
     @Test
     public void testConvertToMeter() throws Exception {
-        Length cm=new CentiMeter(100);
-        Length inch=new Inch(100);
-        assertEquals(new Meter(1),Converter.convertToMeter(cm));
-        assertEquals(new Meter(2.54),Converter.convertToMeter(inch));
+        Length cm = new CentiMeter(100);
+        Length inch = new Inch(100);
+        assertEquals(new Meter(1), Converter.convertToMeter(cm));
+        assertEquals(new Meter(2.54), Converter.convertToMeter(inch));
 
     }
 
     @Test
     public void testConvertToCentiMeter() throws Exception {
-        Length inch=new Inch(1);
-        Length meter=new Meter(254);
-        Length foot=new Foot(1);
-        assertEquals(new CentiMeter(2.54),Converter.convertToCentiMeter(inch));
-        assertEquals(new CentiMeter(25400),Converter.convertToCentiMeter(meter));
-        assertEquals(new CentiMeter(30.48),Converter.convertToCentiMeter(foot));
+        Length inch = new Inch(1);
+        Length meter = new Meter(254);
+        Length foot = new Foot(1);
+        assertEquals(new CentiMeter(2.54), Converter.convertToCentiMeter(inch));
+        assertEquals(new CentiMeter(25400), Converter.convertToCentiMeter(meter));
+        assertEquals(new CentiMeter(30.48), Converter.convertToCentiMeter(foot));
 
     }
-
 
 
     @Test
     public void testConvertToCup() throws Exception {
-            assertEquals(new Cup(1),Converter.convertToCup(new TeaSpoon(48)));
+        assertEquals(new Cup(1), Converter.convertToCup(new TeaSpoon(48)));
     }
 
     @Test
     public void testConvertToOunce() throws Exception {
-            assertEquals(new Ounce(2),Converter.convertToOunce(new TeaSpoon(12)));
+        assertEquals(new Ounce(2), Converter.convertToOunce(new TeaSpoon(12)));
     }
 
     @Test
     public void testConvertToTableSpoon() throws Exception {
         /*System.out.println(new Cup(1).convertToBaseUnit());
         System.out.println(new TableSpoon().convertToBaseUnit());
-        */assertEquals(new TableSpoon(16),Converter.convertToTableSpoon(new Cup(1)));
+        */
+        assertEquals(new TableSpoon(16), Converter.convertToTableSpoon(new Cup(1)));
 
     }
 
     @Test
     public void testConvertToTeaSpoon() throws Exception {
 
-        assertEquals(new TeaSpoon(12),Converter.convertToTeaSpoon(new Ounce(2)));
+        assertEquals(new TeaSpoon(12), Converter.convertToTeaSpoon(new Ounce(2)));
 
+    }
+
+    @Test
+    public void testAdd() throws Exception {
+        assertEquals(new Inch(16), new Inch(6).add(new CentiMeter(25.4)));
     }
 }

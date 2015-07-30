@@ -1,19 +1,22 @@
-public class CentiMeter extends  Length  {
-    public static final int CMtoMM=10;
+public class CentiMeter extends Length {
+    public static final int CMtoMM = 10;
 
     public CentiMeter() {
-        this.conversionFactor=CMtoMM;
+        this.conversionFactor = CMtoMM;
     }
 
     @Override
-    public double getValue(){
+    public double getValue() {
 
         return convertFromBaseUnit(value);
     }
-     public CentiMeter(double value)
-     {
-         this.conversionFactor=CMtoMM;
-         this.value= convertToBaseUnit(value);
-     }
 
+    public CentiMeter(double value) {
+        this.conversionFactor = CMtoMM;
+        this.value = convertToBaseUnit(value);
+    }
+
+    public CentiMeter add(Length object) {
+        return new CentiMeter(addLength(object));
+    }
 }
