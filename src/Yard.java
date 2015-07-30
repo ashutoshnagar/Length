@@ -11,7 +11,7 @@ public class Yard extends  Length {
         this.value= convertToBaseUnit(value);
     }
 
-    public Yard add(Length object)
+    public Length add(Length object)
     {
         return new Yard(addLength(object));
     }

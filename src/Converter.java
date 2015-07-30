@@ -50,10 +50,21 @@ public class Converter {
     }
 
     public static TeaSpoon convertToTeaSpoon(Volume object) {
-        Volume volume = new TeaSpoon();
-        double value = object.convertToBaseUnit();
-        return new TeaSpoon(volume.convertFromBaseUnit(value));
+        return new TeaSpoon(object.convertToBaseUnit());
+    }
+
+    public static Celcius convertToCelcius(Temperature temperature){
+
+        Temperature temperature1=new Celcius();
+        double value = temperature.convertToBaseUnit();
+
+        return new Celcius(temperature1.convertFromBaseUnit(value));
+
     }
 
 
+    public static Fahrenheit convertToFahrenheit(Temperature temperature){
+
+       return new Fahrenheit(temperature.convertToBaseUnit());
+    }
 }

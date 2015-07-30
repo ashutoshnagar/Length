@@ -67,4 +67,15 @@ public class ConverterTest {
     public void testAdd() throws Exception {
         assertEquals(new Inch(16), new Inch(6).add(new CentiMeter(25.4)));
     }
+
+    @Test
+    public void testConvertToCelcius() throws Exception {
+        assertEquals(new Celcius(100),Converter.convertToCelcius(new Fahrenheit(212)));
+    }
+
+    @Test
+    public void testConvertToFahrenheit() throws Exception {
+        assertEquals(new Fahrenheit(32),Converter.convertToFahrenheit(new Celcius(0)));
+
+    }
 }

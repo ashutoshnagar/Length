@@ -8,9 +8,10 @@ public class CentiMeter extends Length {
     public CentiMeter(double value) {
         this.conversionFactor = CMtoMM;
         this.value = convertToBaseUnit(value);
-    }
 
-    public CentiMeter add(Length object) {
+        }
+
+    public Length add(Length object) {
         return new CentiMeter(addLength(object));
     }
 }

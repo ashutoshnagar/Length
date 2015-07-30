@@ -2,7 +2,7 @@ public abstract class Unit {
     double value;
     double conversionFactor;
     public  double getValue() {
-        return value/conversionFactor;
+        return convertFromBaseUnit(value);
     }
 
     @Override

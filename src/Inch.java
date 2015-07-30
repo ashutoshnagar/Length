@@ -11,7 +11,7 @@ public class Inch extends Length {
         this.value = convertToBaseUnit(value);
     }
 
-    public Inch add(Length object) {
+    public Length add(Length object) {
         return new Inch(addLength(object));
     }
 

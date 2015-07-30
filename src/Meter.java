@@ -5,10 +5,6 @@ public class Meter extends Length {
         this.conversionFactor = MtoMM;
     }
 
-    @Override
-    public double getValue() {
-        return convertFromBaseUnit(value);
-    }
 
     public Meter(double value) {
         this.conversionFactor = MtoMM;

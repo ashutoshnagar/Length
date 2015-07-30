@@ -12,7 +12,7 @@ public class Foot extends Length {
     }
 
 
-    public Foot add(Length object) {
+    public Length add(Length object) {
         return new Foot(addLength(object));
 
     }
