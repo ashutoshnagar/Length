@@ -7,17 +7,14 @@ public class Inch extends Length {
         return convertFromMM(value);
     }
 
-    public Inch(double value)
-    {
-        this.value=convertInMM(value);
-    }
-    @Override
-    public double convertInMM(double value) {
-        return value*InchToMM;
+    public Inch() {
+        this.conversionFactor=InchToMM;
     }
 
-    @Override
-    public double convertFromMM(double value) {
-        return value/InchToMM;
+    public Inch(double value)
+    {
+        this.conversionFactor=InchToMM;
+        this.value=convertInMM(value);
     }
+
 }

@@ -11,7 +11,10 @@ public class LengthTest {
         Length feet=new Foot(1);
         Length meter=new Meter(2.54);
         Length cm=new CentiMeter(30.48);
-      assertEquals(feet,cm);
+        Length meter1=Converter.convertYard(cm);
+
+      assertEquals(meter1,cm);
     }
+
 
 }
