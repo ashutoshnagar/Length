@@ -5,10 +5,6 @@ public class Foot extends Length {
         this.conversionFactor = FoottoMM;
     }
 
-    @Override
-    public double getValue() {
-        return convertFromBaseUnit(value);
-    }
 
     public Foot(double value) {
         this.conversionFactor = FoottoMM;

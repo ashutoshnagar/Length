@@ -10,10 +10,6 @@ public class TableSpoon extends Volume {
         this.value = convertToBaseUnit(value);
     }
 
-    @Override
-    public double getValue() {
-        return convertFromBaseUnit(value);
-    }
 
     public TableSpoon add(Volume volume) {
         return new TableSpoon(addToVolume(volume));

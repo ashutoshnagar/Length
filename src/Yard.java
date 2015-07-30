@@ -5,11 +5,6 @@ public class Yard extends  Length {
         this.conversionFactor=YardtoMM;
     }
 
-    @Override
-    public double getValue() {
-        return convertFromBaseUnit(value);
-    }
-
     public Yard(double value)
     {
         this.conversionFactor=YardtoMM;

@@ -15,7 +15,4 @@ public class Meter extends Length {
         this.value = convertToBaseUnit(value);
     }
 
-    public Meter add(Length object) {
-        return new Meter(addLength(object));
-    }
 }

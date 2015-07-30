@@ -14,8 +14,4 @@ public class Cup extends Volume {
         return new Cup(addToVolume(volume));
     }
 
-    @Override
-    public double getValue() {
-        return convertFromBaseUnit(value);
-    }
 }

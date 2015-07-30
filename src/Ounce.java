@@ -15,8 +15,4 @@ public class Ounce extends Volume {
         return new Ounce(addToVolume(volume));
     }
 
-    @Override
-    public double getValue() {
-        return convertFromBaseUnit(value);
-    }
 }

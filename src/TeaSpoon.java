@@ -16,10 +16,6 @@ public class TeaSpoon extends Volume {
         return new TeaSpoon(addToVolume(volume));
     }
 
-    @Override
-    public double getValue() {
-        return convertFromBaseUnit(value);
-    }
 
 
 }

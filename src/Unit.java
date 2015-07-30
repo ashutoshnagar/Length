@@ -1,7 +1,9 @@
 public abstract class Unit {
     double value;
     double conversionFactor;
-    public abstract double getValue() ;
+    public  double getValue() {
+        return value/conversionFactor;
+    }
 
     @Override
     public boolean equals(Object o) {
